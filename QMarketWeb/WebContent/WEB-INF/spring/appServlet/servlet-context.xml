@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" 
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:beans="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+	xmlns:security="http://www.springframework.org/schema/security"	
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+		http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc-3.0.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+		http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-3.1.xsd">
+
+	<!-- DispatcherServlet Context: defines this servlet's request-processing 
+		infrastructure -->
+	<bean class="org.springframework.context.support.ReloadableResourceBundleMessageSource"
+		id="messageSource">
+		<property name="basename" value="WEB-INF/lang/messages" />
+		<property name="defaultEncoding" value="UTF-8" />
+	</bean>
+
+	<bean id="validator" class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean">
+		<property name="validationMessageSource" ref="messageSource" />
+	</bean>		
+
+	<!-- Enables the Spring MVC @Controller programming model -->
+	<mvc:annotation-driven>
+	  <mvc:argument-resolvers>
+	    <beans:bean class="org.springframework.mobile.device.DeviceWebArgumentResolver" />
+	  </mvc:argument-resolvers>	
+	</mvc:annotation-driven>
+	<context:component-scan base-package="com.quakd.web" />
+
+
+	<!-- Handles HTTP GET requests for /resources/** by efficiently serving 
+		up static resources in the ${webappRoot}/resources directory -->
+	<mvc:resources mapping="/resources/**" location="/resources/" />
+
+	<mvc:interceptors>
+	    <mvc:interceptor>
+	      <mvc:mapping path="/secure/**" />
+	      <beans:bean class="com.quakd.web.spring.SecureSocialInterceptor" />
+	    </mvc:interceptor>	
+	  <beans:bean class="org.springframework.mobile.device.DeviceResolverHandlerInterceptor" />
+	</mvc:interceptors>	
+	
+<!-- 	<mvc:interceptors> -->
+<!-- 	    <mvc:interceptor> -->
+<!-- 	    <mvc:mapping path="/connect/**" /> -->
+<!-- 	    <beans:bean class="com.quakd.web.spring.social.UserInterceptor">  -->
+<!-- 	    	<beans:constructor-arg index="0" ref="usersConnectionRepository"></beans:constructor-arg> -->
+<!-- 	    </beans:bean> -->
+<!-- 		</mvc:interceptor> -->
+<!-- 	</mvc:interceptors> -->
+	
+	<bean
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource"
+		id="dataSource"> 
+		<property value="com.mysql.jdbc.Driver" name="driverClassName" />
+		<property value="jdbc:mysql://localhost:3306/quser"
+			name="url" />
+		<property value="root" name="username" />
+		<property value="1800coll" name="password" />
+	</bean>
+	
+   <bean id="persistenceExceptionTranslationPostProcessor" 
+    class="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor"/>	
+
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.search.default.directory_provider">filesystem</prop>	
+				<prop key="hibernate.search.default.indexBase">D:/temp</prop>				          		
+				<prop key="hibernate.dialect">org.hibernate.spatial.dialect.mysql.MySQLSpatial56Dialect
+				</prop>
+				<prop key="hibernate.show_sql">true</prop>
+			</props>
+		</property>
+		<property value="com.quakd.web.model" name="packagesToScan" />
+	</bean>
+
+	<bean
+		class="org.springframework.orm.hibernate4.HibernateTransactionManager"
+		id="transactionManager">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+	<tx:annotation-driven transaction-manager="transactionManager" />
+
+	<bean id="applicationContextProvider"
+		class="com.quakd.web.spring.ApplicationContextProvider" /> 
+
+	<bean id="pickList" class="com.quakd.web.spring.PicklistProvider"
+		init-method="init" /> 
+
+	<import resource="spring-security.xml" />	
+	
+<!-- 	<import resource="spring-social.xml" />		 -->
+
+<!-- 	<bean id="viewResolver" -->
+<!-- 		class="org.springframework.web.servlet.view.InternalResourceViewResolver"> -->
+<!-- 		<property name="prefix" value="/WEB-INF/jsp/" /> -->
+<!-- 		<property name="suffix" value=".jsp" /> -->
+<!-- 	</bean> -->
+
+ 
+<!-- 	<bean id="deviceTilesResolver" class="com.quakd.web.spring.DeviceTilesResolver"> -->
+<!-- 	  <property name="mobileSuffix" value=".mob" /> -->
+<!-- 	</bean>	    -->
+
+    
+	<bean class="org.springframework.mobile.device.view.LiteDeviceDelegatingViewResolver">
+	  <constructor-arg>
+	    <bean class="org.springframework.web.servlet.view.UrlBasedViewResolver"  
+	        id="tilesViewResolver">  
+	        <property name="viewClass"  
+	            value="org.springframework.web.servlet.view.tiles3.TilesView" />  
+	    </bean>	  
+	  </constructor-arg>
+	  <property name="mobileSuffix" value=".mob" />
+	  <property name="enableFallback" value="true" />	  
+	</bean>    
+
+	
+	<bean id="tilesConfigurer" class="org.springframework.web.servlet.view.tiles3.TilesConfigurer" >
+	    <property name="definitions">
+	        <value>/WEB-INF/tiles.xml</value>
+	    </property> 
+	</bean>	
+
+	 <bean id="multipartResolver"  
+	  class="org.springframework.web.multipart.commons.CommonsMultipartResolver" /> 
+
+
+	<bean id="mailSender"
+		class="org.springframework.mail.javamail.JavaMailSenderImpl">
+		<property name="host" value="smtp.gmail.com" />
+		<property name="username" value="cto@quakd.com" />
+		<property name="password" value="1800coll" /> 
+		<property name="javaMailProperties">
+			<props>
+				<!-- Use SMTP transport protocol -->
+				<prop key="mail.transport.protocol">smtp</prop>
+				<!-- Use SMTP-AUTH to authenticate to SMTP server -->
+				<prop key="mail.smtp.auth">true</prop> 
+				<prop key="mail.smtp.port">587</prop>
+				<!-- Use TLS to encrypt communication with SMTP server -->
+				<prop key="mail.smtp.starttls.enable">true</prop>
+				<prop key="mail.debug">true</prop>
+			</props>
+		</property>
+	</bean>
+	
+   <bean id="velocityEngine" class="org.springframework.ui.velocity.VelocityEngineFactoryBean">
+      <property name="velocityProperties">
+         <value>
+            resource.loader=class
+            class.resource.loader.class=org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+         </value>
+      </property>
+   </bean>
+
+	<bean id="appProperties" 
+	          class="org.springframework.beans.factory.config.PropertiesFactoryBean">
+	        <property name="singleton" value="true"/>
+	        <property name="properties">
+	                <props>
+	                        <prop key="email_service.polltime">3000000</prop>
+	                        <prop key="facebook.clientId">230697073747993</prop>
+	                        <prop key="facebook.clientSecret">b55c20550eeb698fe72faa7a22cc704a</prop>      
+	                        <prop key="twitter.consumerKey">dI90E8cdHUgalQhJhwRSw</prop>             
+	                        <prop key="twitter.consumerSecret">XIPXoXDIDefopvxHIS0VVGKimhbFxoJ3nS8nWF9rI</prop>      
+	                </props> 
+	        </property>
+	</bean>   
+
+    <bean id="threadPoolTaskScheduler" class="org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler">
+        <property name="poolSize" value="1" />
+    </bean>
+
+
+
+</beans>

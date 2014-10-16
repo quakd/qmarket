@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:facebook="http://www.springframework.org/schema/social/facebook"
+	xmlns:twitter="http://www.springframework.org/schema/social/twitter"
+	xmlns:social="http://www.springframework.org/schema/social"
+	xmlns:linkedin="http://www.springframework.org/schema/social/linkedin"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:c="http://www.springframework.org/schema/c" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/social/facebook http://www.springframework.org/schema/social/spring-social-facebook.xsd
+http://www.springframework.org/schema/social/linkedin http://www.springframework.org/schema/social/spring-social-linkedin.xsd
+http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+http://www.springframework.org/schema/social/twitter http://www.springframework.org/schema/social/spring-social-twitter.xsd
+http://www.springframework.org/schema/social http://www.springframework.org/schema/social/spring-social.xsd
+http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd
+http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.1.xsd">
+
+<!-- 	<bean id="connectionFactoryLocator" -->
+<!-- 		class="org.springframework.social.connect.support.ConnectionFactoryRegistry"> -->
+<!-- 		<property name="connectionFactories"> -->
+<!-- 			<list> -->
+<!-- 				<bean -->
+<!-- 					class="org.springframework.social.twitter.connect.TwitterConnectionFactory"> -->
+<!-- 					<constructor-arg value="dI90E8cdHUgalQhJhwRSw" /> -->
+<!-- 					<constructor-arg value="XIPXoXDIDefopvxHIS0VVGKimhbFxoJ3nS8nWF9rI" /> -->
+<!-- 				</bean>  -->
+<!-- 				<bean -->
+<!-- 					class="org.springframework.social.facebook.connect.FacebookConnectionFactory"> -->
+<!-- 					<constructor-arg value="230697073747993" /> -->
+<!-- 					<constructor-arg value="b55c20550eeb698fe72faa7a22cc704a" /> -->
+<!-- 				</bean> -->
+<!-- 			</list> -->
+<!-- 		</property> -->
+<!-- 	</bean> -->
+
+<!-- 	<bean id="textEncryptor" class="org.springframework.security.crypto.encrypt.Encryptors" -->
+<!-- 		factory-method="noOpText" /> -->
+
+<!-- 	<bean id="usersConnectionRepository" -->
+<!-- 		class="org.springframework.social.connect.jdbc.JdbcUsersConnectionRepository"> -->
+<!-- 		<constructor-arg ref="dataSource" /> -->
+<!-- 		<constructor-arg ref="connectionFactoryLocator" /> -->
+<!-- 		<constructor-arg ref="textEncryptor" /> -->
+<!-- 	</bean> -->
+
+<!-- 	<bean id="connectionRepository" factory-method="createConnectionRepository" -->
+<!-- 		factory-bean="usersConnectionRepository" scope="request"> -->
+<!-- 		<constructor-arg value="#{request.userPrincipal.name}" /> -->
+<!-- 		<aop:scoped-proxy proxy-target-class="false" />  -->
+<!-- 	</bean> -->
+
+<!-- 	<bean id="connectController" class="org.springframework.social.connect.web.ConnectController"> -->
+<!-- 		<constructor-arg index="0" ref="connectionFactoryLocator"></constructor-arg> -->
+<!-- 		<constructor-arg index="1" ref="connectionRepository"></constructor-arg> -->
+<!-- 	</bean> -->
+
+<!-- 	<bean id="facebook" class="org.springframework.social.facebook.api.impl.FacebookTemplate" scope="request" depends-on="connectionRepository"> -->
+<!-- 	 	<aop:scoped-proxy proxy-target-class="false" /> -->
+<!-- 	</bean>	 -->
+	
+<!-- 	<bean id="twitter" class="org.springframework.social.twitter.api.impl.TwitterTemplate" scope="request" depends-on="connectionRepository"> -->
+<!-- 	 	<aop:scoped-proxy proxy-target-class="false" /> -->
+<!-- 	</bean> -->
+
+
+</beans>

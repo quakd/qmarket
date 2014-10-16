@@ -1,0 +1,413 @@
+/* Main site layout */
+html,body {
+	height: 100%;
+	padding: 0px;
+	margin: 0px;
+	background-repeat: repeat;
+	font-size: 10pt;
+ 	font-family: 'Open Sans',sans-serif;
+	vertical-align: baseline;
+	background-color: #f2f4f3;	
+}
+
+#container {
+	min-height: 100%;	
+	position: relative;
+}
+
+#main {
+	overflow: auto;
+	padding-bottom: 120px;
+
+	/* min-height: 250px; */
+	min-width: 900px;
+	width: 100%;
+	position: relative;
+	background-color: #f2f4f3;
+	/*
+	background: url("../images/main_bg.png");
+	background-repeat: repeat;
+	*/
+}
+
+#footer {
+    position:absolute;
+    bottom:0;	
+	margin-top: -120px;
+	clear: both;
+	font-size: 10pt;
+	height: 120px;
+	min-width: 900px;
+	background-image: url("../images/footer_bg.png");
+	background-repeat: repeat;
+	color: #ffffff;
+	width: 100%;
+}
+
+/* Opera Fix
+body:before {
+	content: "";
+	height: 100%;
+	float: left;
+	width: 0;
+	margin-top: -32767px;
+}
+*/
+
+#header {
+	width: 100%;
+	/* top: 0px; */
+	/* left: 0px; */
+	height: 50px;
+	background-image: url("../images/quakd_topbg.png");
+	background-repeat: repeat;
+	min-width: 900px;
+	position: relative;	
+	/* z-index: 1000; */
+}
+
+#subheader {
+	width: 870px;
+	height: 50px;
+}
+
+/* quakd login area */
+
+.signin_area {
+	font-size: 8pt;
+	color: #000000;
+	font-weight: bold;	
+	width: 300px;
+}
+
+.light_header {
+	height: 35px; 	
+	background-color: #f2f4f3;
+	text-align: center;
+	border:1px solid;
+	border-radius:5px;	
+	width: 300px;
+}
+
+.signin_area2 {
+	height: 160px; 	
+	background-color: #dddddd;
+	padding-left: 15px;
+	max-width: 300px;
+}
+
+.signin_area3 {
+	height: 35px; 		
+	background-color: #505050;
+	width: 300px;
+	text-align: left;
+	vertical-align: bottom;
+	font-size: 12pt;
+    color: #ffffff;	
+	border:2px solid #47A9EB;	
+}
+
+#innersignin {
+	padding-left: 10px;
+	padding-bottom: 20px;
+	padding-top: 20px;
+}
+
+/* quakd sign up */
+
+#signuparea {
+	width: 750px;
+	background-color: #f2f4f3;
+}
+
+#quakd_signin_story
+{
+	padding-left: 20px;
+	width: 400px;
+}
+
+
+/* logged in user side navigation */
+#user_dashboard {
+   width: 850px;
+   display: block;
+   position: relative;
+   border-right: 1px solid #ff1a24;   
+}
+
+#user_nav {
+	float: left;
+	width: 170px;
+	font-size: 8pt;
+	word-wrap: break-word;
+	display: block;
+   	padding-top: 10px;
+   	padding-left: 5px;	
+}
+
+#user_content {
+    float: left;
+	border-left: 1px solid #ff1a24;
+	min-height: 650px;
+	display: block;
+	padding-left: 10px;
+   	padding-top: 10px;	
+   	width: 655px;
+}
+
+.social_media_connections {
+	border-top: 1px solid #ff1a24;
+	padding-right: 10px;
+}
+
+div.side_user_nav {
+	border-top: 1px solid #ff1a24;
+	padding-right: 10px;	
+	font-size: 10pt;	
+}
+
+div.user_nav_header
+{
+	height: 35px; 	
+	text-align: left;
+}
+
+div.user_nav_header h2 {
+    color: #3A6D8C;
+    font-size: 12pt;
+    font-weight: bold;
+}
+
+
+ul.side_user_nav {	
+	width: 170px;
+	margin: 0;
+	padding: 0;	
+	font-weight: bolder;
+	font-size: 10pt;
+}
+
+ul.side_user_nav a.nav_selected {
+   background-color: #3399FF;
+}
+
+ul.side_user_nav li {
+	list-style: none;
+    text-align: left;
+    margin: 0;
+}
+
+ul.side_user_nav li a {
+  display: block;
+  text-decoration: none;
+  padding: .25em;
+  color: #000000;
+}
+
+ul.side_user_nav li a:link {
+  color: #000000;
+}
+
+ul.side_user_nav li a:visited {
+  color: #000000;
+}
+
+ul.side_user_nav li a:hover {
+   background-color: #ff1a24;
+   color: #ffffff;
+}
+
+ul.side_user_nav li a:active {
+   background-color: #ff1a24;
+   color: #ffffff;
+}
+
+
+/* Search bar and search area */
+#searchArea .search { 
+	padding:6px 15px 6px 30px;
+	margin:3px; 
+	background: url('../images/search-icon-grey.png') no-repeat 0px 6px;
+}
+
+#searchArea .rounded { 
+	border-radius:15px; 
+	-moz-border-radius:15px; 
+	-webkit-border-radius:15px; 
+}
+
+#searchArea input[type=text]{
+	color:#a0a0a0;
+}
+
+#searchArea {
+	float: left;
+	width:335px;
+	height:45px;
+	padding-top: 5px;
+}
+
+#searchArea input[type=button], input[type=button]:hover {
+	position:relative; 
+	left:-6px;
+	border:1px solid #adc5cf;
+	background: #e4f1f9; /* Old browsers */
+	background: -moz-linear-gradient(top, #e4f1f9 0%, #d5e7f3 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#e4f1f9), color-stop(100%,#d5e7f3)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, #e4f1f9 0%,#d5e7f3 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, #e4f1f9 0%,#d5e7f3 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, #e4f1f9 0%,#d5e7f3 100%); /* IE10+ */
+	background: linear-gradient(top, #e4f1f9 0%,#d5e7f3 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e4f1f9', endColorstr='#d5e7f3',GradientType=0 ); /* IE6-9 */
+	color:#7da2aa;
+	cursor: pointer;
+}
+
+#searchBtn {
+	font-size: 8pt;
+}
+
+#searchArea input[type=text]{
+	border:1px solid #d0d0d0;
+	background-color:#fcfcfc;
+}
+
+/* map related CSS */
+
+/* info window */
+.mapinfowindow {
+	
+}
+
+.mapinfogobtn {
+  text-align: center;
+}
+
+.mapresultscnt {
+	width: 100%;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;	
+	-khtml-border-radius: 4px;
+	border-radius: 4px;		
+	border: 1px solid #ef4136;
+	min-height: 500px;
+	overflow: auto;
+}
+
+.mapresultsheader {
+	width: 100%;
+    background-color: #ef4136;
+    color: #ffffff;
+    font-size: 12pt;
+    font-weight: normal;
+    text-decoration: none;
+    width: 100%;
+    text-align: center;
+    vertical-align: bottom;
+}
+
+.map_address {
+    font-size: 8pt;	
+}
+
+.mapresults {	
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;	
+	-khtml-border-radius: 4px;
+	border-radius: 4px;		
+	border: 1px solid #d0d0d0;
+	word-wrap: break-word;
+	min-height: 100px;
+	max-height: 120px;
+	margin: 5px;
+	font-size: 10pt;
+	background-color: #ffffff;
+}
+
+.mapresults:hover {	
+	font-size: 10pt;
+	color: #ffffff;
+	background-color: #3399FF;	
+}
+
+.company_logo {
+	background-color: #ffffff;
+	float: left; 
+	width: 100px;
+}
+
+.company_info {
+	float: left; 
+	min-width: 175px;
+    width: 175px;
+    padding-left: 5px;
+}
+
+.company_name {
+	font-weight: bolder;
+}
+
+
+/* Qponds */
+.qpond_cntr {
+	background-color: #ffffff;
+	height: 500px;
+	width: 500px;
+	word-wrap: break-word;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;	
+	-khtml-border-radius: 4px;
+	border-radius: 4px;		
+	border: 1px solid #d0d0d0;
+	min-height: 500px;
+	font-size: 10pt;	
+}
+
+.qpond_company_name  {
+	font-size: 10pt;
+	font-weight: bold;	
+}
+
+.qpond_company_logo {
+	background-color: #ffffff;
+	float: left; 
+	width: 100px;
+	height: 100px;
+}
+
+.qpond_company_msg {
+	width: 500px;	
+	font-size: 10pt;	
+}
+
+/* Favorites and re-quaks */
+.favs_cntr {
+	background-color: #ffffff;
+	height: 200px;
+	width: 400px;
+	word-wrap: break-word;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;	
+	-khtml-border-radius: 4px;
+	border-radius: 4px;		
+	border: 1px solid #d0d0d0;
+	min-height: 200px;
+	font-size: 10pt;	
+}
+
+.favs_company_name  {
+	font-size: 10pt;
+	font-weight: bold;	
+}
+
+.favs_logo {
+	background-color: #ffffff;
+	float: left; 
+	width: 100px;
+	height: 100px;
+}
+
+.favs_info {
+	width: 400px;	
+	font-size: 10pt;	
+}

@@ -1,0 +1,329 @@
+/* general settings */
+
+.formField input {
+	padding: 5px;
+}
+
+.formField select {
+	padding: 5px;
+}
+
+
+.dark_header {
+	background-color: #909090;
+	color: #ffffff;
+	text-align: left;
+	border:1px solid;
+	border-radius:5px;	
+}
+
+div.header_border{
+    background-color: #E5E5E5;
+    border-color: #C9CAEF;
+    border-style: solid;
+    border-width: 1px;
+    color: gray;
+    font-size: 10pt;
+    font-weight: bold;
+    text-decoration: none;
+    width: 100%;
+   vertical-align: bottom;
+}
+
+div.height10 {
+	height: 10px;
+}
+
+div.height20 {
+	height: 10px;
+}
+
+.noDisplay
+{
+ display: none;	
+}
+
+.padLeft10 {
+	padding-left: 10px;
+}
+
+.clearFix
+{
+    clear: both;
+    content: ".";
+    display: block;
+    font-size: 0;
+    height: 0;
+    line-height: 0;
+    visibility: hidden;	
+}
+
+a img {
+	border: 0px;
+}
+
+textarea {
+    resize: none;
+}
+
+div.centered {
+	margin: 0 auto;
+}
+
+div.float {
+	float: left;
+}
+
+div.floatr {
+	float: right;
+}
+
+/* quakd banner navigation */
+.logon-title {
+ display: none;
+}
+
+.logon-content {
+	display: none; 
+	width: 120px;
+}
+
+#login_screen {
+	font-size: 8pt;
+	color: #c0c0c0;
+	font-weight: bold;
+}
+
+.signup {
+ 	font-size: 8pt;  
+}
+
+.signin {
+	font-size: 8pt;
+}
+
+#trade {
+	width: 10px;
+	font-size: 12px;
+	color: #ffffff;
+	font-weight: bold;
+	text-shadow: 1px 1px 1px rgb(0, 0, 0);
+	vertical-align: top;
+	float: left;
+}
+
+#dialog-message {
+	z-index: 2001;
+}
+
+legend.header {
+	font-size: 14pt;
+	color: #000000;
+	font-weight: bold;
+	height: 32px;
+	background-image: url("../images/foot_sm.png");
+	background-repeat: no-repeat;
+	padding-left: 38px;
+	vertical-align: bottom;
+}
+
+.qpanel {
+	font-size: 10pt;
+	color: #000000;
+	border: 4px solid #ef4136;
+	padding: 15px;
+}
+
+.required {
+	color: #ff0000;
+	font-style: italic;
+}
+
+span.info,span.success,span.warning,span.error,span.validation {
+    left: 0.2em;
+    float: left; 
+    margin-right: .3em;
+    top: 0.2em;
+    height: 20px;
+    width: 20px;
+    background-repeat: no-repeat;
+    display: block;
+    overflow: hidden;
+    text-indent: -99999px;        
+}
+
+span.info {
+	background-image: url('../images/info.png');
+}
+
+span.success {
+	background-image: url('../images/success.png');
+}
+
+span.warning {
+	background-image: url('../images/warning.png');
+}
+
+span.error {
+	background-image: url('../images/error.png');
+}
+
+span.validation {
+	background-image: url('../images/validation.png');
+}
+
+.formField {
+	margin-right: 10px;
+	max-width: 200px;
+}
+
+.quakd_btn {
+	font-size: 12px;
+	font-weight: bold;
+}
+
+/* quakd footer navigation */
+#footer_social {
+	float: left;
+	padding-top: 5px;
+	padding-left: 5px;	
+}
+
+#copyright {
+	font-size: 8px;
+	color: #ffffff;
+	font-weight: bold;
+}
+
+.main_nav ul {
+	width: 100%;
+	height: 36px;
+	padding: 0px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+    list-style-type: none;	
+}
+
+.main_nav li {
+	display: inline;
+	list-style: none outside none;
+	padding: 5px;
+	height: 36px;
+}
+
+#footer a:link {
+	font-size: 12px;
+	color: #ffffff;
+	font-weight: bold;
+	text-shadow: 1px 1px 1px rgb(0, 0, 0);
+	text-decoration: none;
+}
+
+#footer a:visited {
+	text-decoration: none;
+	color: #ffffff;
+}
+
+#footer a:hover {
+	text-decoration: underline;
+	color: #ffffff;
+}
+
+/* Drop down user navigation */
+ul#sm_nav_menu {
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	color: #000000;
+}
+
+ul#sm_nav_menu li {
+	border: 1px solid #c0c0c0;
+	list-style: none;
+	text-align: left;
+    color: #000000;
+}
+
+ul#sm_nav_menu li a {
+	display: block;
+	text-decoration: none;
+	padding: .25em;
+    color: #000000;
+}
+
+#sm_nav_menu a:link,a:visited {
+	color: #000080;
+}
+
+#sm_nav_menu a:hover,a:active {
+	color: #000000;
+}
+
+#sm_nav_menu a:hover {
+	color: #ffffff;
+	background-color: #3399FF;
+}
+
+
+.customTool {
+	/* border: 2px solid #000000; */
+	min-width: 150px;
+	word-wrap: break-word;
+	background-color: #ddd;
+	color: #ffffff;
+}
+
+.customTool .qtip-content {
+	font-size: 10px;
+	background-color: #ffffff;
+	color: #000000;
+	border: 4px solid #ef4136;	
+	padding: 0px;
+}
+
+.customTool .qtip-titlebar {
+	font-size: 10px;
+	font-weight: bold;
+	background-color: #ef4136;
+}
+
+#quick_nav_btn {
+	background-color: #ffffff;   
+	color: #000000;
+	border:1px solid;
+	border-radius:5px; 
+	-moz-border-radius:5px; 
+	-webkit-border-radius:5px; 
+	padding: 5px;
+	font-size: 8pt;
+	margin-right: 35px;
+}
+
+#quick_nav_btn:hover {
+	background-color: #3399FF;
+    color: #ffffff;
+}
+
+#quick_nav_btn.clicked {
+	background-color: #3399FF;
+    color: #ffffff;
+}
+
+#userinfo {
+	float: right;
+	padding-top: 5px;	
+	max-width: 300px;
+	word-wrap: break-word;
+}
+
+h1 {
+	color: #3B5998;	
+}
+
+h2 {
+	color: #3B5998;
+}
+
+h3 {
+	color: #3B5998;	
+}

@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN" "http://tiles.apache.org/dtds/tiles-config_3_0.dtd"> 
+<tiles-definitions>  
+
+	<definition name="no_navigation" template="/WEB-INF/shared/master.jsp">
+		<put-attribute name="documentTitle" type="string" value="Template"/>
+		<put-attribute name="navigation" value="/WEB-INF/views/no_nav.jsp" />
+	</definition>
+	
+	<definition name="navigation" template="/WEB-INF/shared/master.jsp">
+		<put-attribute name="documentTitle" type="string" value="Template"/>
+		<put-attribute name="navigation" value="/WEB-INF/views/navigation.jsp" />
+	</definition>	
+	
+	<definition name="landing" template="/WEB-INF/views/landing.jsp">
+		<put-attribute name="documentTitle" value="Quakd - Welcome"/>
+	</definition>	
+
+	<definition name="about" extends="no_navigation">
+		<put-attribute name="documentTitle" value="About Us"/>
+		<put-attribute name="mainContent" value="/WEB-INF/views/about.jsp" cascade="true"/>
+	</definition>		
+	
+	<definition name="signup" extends="no_navigation">
+		<put-attribute name="documentTitle" value="Sign-up"/>
+		<put-attribute name="mainContent"  value="/WEB-INF/views/signup.jsp" cascade="true"/>
+	</definition>	
+		
+	<definition name="signup_email" extends="no_navigation">
+		<put-attribute name="documentTitle" value="Account Created"/>
+		<put-attribute name="mainContent"  value="/WEB-INF/views/signup_complete.jsp" cascade="true"/>
+	</definition>			
+	
+	<definition name="home" extends="navigation">
+		<put-attribute name="documentTitle" value="Homepage"/>
+		<put-attribute name="mainContent" value="/WEB-INF/views/home.jsp" cascade="true"/>
+	</definition>	
+	
+	<definition name="share_message" extends="navigation">
+		<put-attribute name="documentTitle" value="Homepage"/>
+		<put-attribute name="mainContent" value="/WEB-INF/views/share_message.jsp" cascade="true"/>
+	</definition>	
+
+	<definition name="message_success" extends="navigation">
+		<put-attribute name="documentTitle" value="Homepage"/>
+		<put-attribute name="mainContent" value="/WEB-INF/views/message_success.jsp" cascade="true"/>
+	</definition>	
+	
+	<definition name="add_qponds" extends="navigation">
+		<put-attribute name="documentTitle" value="Qponds"/>
+		<put-attribute name="mainContent" value="/WEB-INF/views/add_qponds.jsp" cascade="true"/>
+	</definition>
+	
+	<definition name="view_qponds" extends="navigation">
+		<put-attribute name="documentTitle" value="Qponds"/>
+		<put-attribute name="mainContent" value="/WEB-INF/views/view_qponds.jsp" cascade="true"/>
+	</definition>	
+
+	<definition name="view_favorites" extends="navigation">
+		<put-attribute name="documentTitle" value="Qponds"/>
+		<put-attribute name="mainContent" value="/WEB-INF/views/view_favorites.jsp" cascade="true"/>
+	</definition>								
+
+	<definition name="signin" extends="no_navigation">
+		<put-attribute name="documentTitle" value="Sign-up"/>
+		<put-attribute name="mainContent" value="/WEB-INF/views/signin.jsp" cascade="true"/>
+	</definition>		
+
+	<definition name="support" extends="no_navigation">
+		<put-attribute name="documentTitle" value="Support"/>
+		<put-attribute name="mainContent" value="/WEB-INF/views/support.jsp" cascade="true"/>
+	</definition>		
+
+	<definition name="privacy" extends="no_navigation">
+		<put-attribute name="documentTitle" value="About Us"/>
+		<put-attribute name="mainContent" value="/WEB-INF/views/privacy.jsp" cascade="true"/>
+	</definition>
+
+	<definition name="user_info" extends="navigation">
+		<put-attribute name="documentTitle" value="Homepage"/>
+		<put-attribute name="mainContent" value="/WEB-INF/views/user_info.jsp" cascade="true"/>
+	</definition>	
+	
+	<!-- mobile tablet -->
+	<definition name="privacy.mob" extends="master.mob">
+		<put-attribute name="mainContent" value="/WEB-INF/mobile/privacy_mobile.jsp" cascade="true"/>
+	</definition>
+
+	<definition name="support.mob" extends="master.mob">
+		<put-attribute name="mainContent" value="/WEB-INF/mobile/support_mobile.jsp" cascade="true"/>
+	</definition>	
+
+	<definition name="home.mob" extends="master.mob">
+		<put-attribute name="mainContent" value="/WEB-INF/mobile/home_mobile.jsp" cascade="true"/>
+	</definition>												
+	
+	<definition name="signup.mob" extends="master.mob">
+		<put-attribute name="mainContent"  value="/WEB-INF/mobile/signup_mobile.jsp" cascade="true"/>
+	</definition>
+
+	<definition name="landing.mob" template="/WEB-INF/mobile/landing_mobile.jsp">
+		<put-attribute name="documentTitle" value="Quakd"/>
+	</definition>	
+
+	<definition name="signup_email.mob" extends="master.mob">
+		<put-attribute name="mainContent" value="/WEB-INF/mobile/signup_complete_mobile.jsp" cascade="true"/>
+	</definition>	
+
+	<definition name="about.mob" extends="master.mob">
+		<put-attribute name="mainContent" value="/WEB-INF/mobile/about_mobile.jsp" cascade="true"/>
+	</definition>
+
+	<definition name="signin.mob" extends="master.mob">
+		<put-attribute name="mainContent" value="/WEB-INF/mobile/signin_mobile.jsp" cascade="true"/>
+	</definition>	
+	
+	<definition name="message_success.mob" extends="master.mob">
+		<put-attribute name="mainContent" value="/WEB-INF/mobile/message_success_mobile.jsp" cascade="true"/>
+	</definition>	
+
+	<definition name="share_message.mob" extends="master.mob">
+		<put-attribute name="mainContent" value="/WEB-INF/mobile/share_message_mobile.jsp" cascade="true"/>
+	</definition>		
+
+	<definition name="master.mob" template="/WEB-INF/shared/master_mobile.jsp">
+		<put-attribute name="documentTitle" value="Quakd"/> 
+	</definition>									
+	
+</tiles-definitions>
